@@ -26,21 +26,26 @@
       "properties": {
         "id": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
         },
         "name": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 160
         },
         "manifest_uri": {
           "type": "string",
-          "format": "uri"
+          "format": "uri",
+          "pattern": "^https://[^/@\\s?#]+(?:/[^#\\s]*)?(?:\\?[^#\\s]*)?$"
         }
       }
     },
     "generated_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
     },
     "resources": {
       "type": "array",
@@ -57,7 +62,9 @@
         "properties": {
           "id": {
             "type": "string",
-            "pattern": "^[a-z0-9][a-z0-9._:-]*$"
+            "minLength": 3,
+            "maxLength": 128,
+            "pattern": "^[a-z0-9][a-z0-9._:-]{2,127}$"
           },
           "kind": {
             "enum": [
@@ -71,39 +78,51 @@
           },
           "name": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "maxLength": 160
           },
           "summary": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 2000
           },
           "manifest_uri": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "pattern": "^https://[^/@\\s?#]+(?:/[^#\\s]*)?(?:\\?[^#\\s]*)?$"
           },
           "manifest_version": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "maxLength": 64
           },
           "capabilities": {
             "type": "array",
+            "maxItems": 128,
+            "uniqueItems": true,
             "items": {
-              "type": "string"
-            },
-            "uniqueItems": true
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
           },
           "tags": {
             "type": "array",
+            "maxItems": 128,
+            "uniqueItems": true,
             "items": {
-              "type": "string"
-            },
-            "uniqueItems": true
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
           },
           "updated_at": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
           }
         }
-      }
+      },
+      "maxItems": 512
     }
   }
 }
