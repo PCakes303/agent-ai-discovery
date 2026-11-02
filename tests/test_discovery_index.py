@@ -29,7 +29,8 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(list(SCHEMA_VALIDATOR.iter_errors(BASE)), [])
 
     def test_duplicate_resource_id(self):
-        self.assert_rejected({**BASE, "resources": BASE["resources"] * 2})
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            validate({**BASE, "resources": BASE["resources"] * 2})
 
     def test_http_and_relative_uris_rejected(self):
         for uri in ("http://example.org/manifest.json", "/manifest.json"):
