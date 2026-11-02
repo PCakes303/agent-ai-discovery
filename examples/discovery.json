@@ -1,0 +1,29 @@
+{
+  "discovery_version": "1.0.0",
+  "publisher": {
+    "id": "PCakes303",
+    "name": "MrCakes931",
+    "manifest_uri": "https://github.com/PCakes303/agent-intelligence-ecosystem"
+  },
+  "generated_at": "2026-11-01T00:00:00Z",
+  "resources": [
+    {
+      "id": "discovery",
+      "kind": "repository",
+      "name": "Agent AI Discovery",
+      "summary": "Discovery metadata and capability index.",
+      "manifest_uri": "https://github.com/PCakes303/agent-ai-discovery/blob/main/manifest.json",
+      "manifest_version": "1.0.0",
+      "capabilities": [
+        "discovery-document-format",
+        "capability-index"
+      ],
+      "tags": [
+        "agents",
+        "discovery",
+        "metadata"
+      ],
+      "updated_at": "2026-11-01T00:00:00Z"
+    }
+  ]
+}
