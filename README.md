@@ -74,7 +74,7 @@ These are declared contract dependencies, not verified runtime integrations. See
 
 ## Maturity and roadmap
 
-The repository is still **scaffolding**. A first local validator and unit-test suite have been added, but CI, external publisher authentication, schema conformance testing, and consumer interoperability are not yet verified. See [ROADMAP.md](ROADMAP.md).
+The repository is still **scaffolding**. A first local validator and unit-test suite have been added, and its starter CI and regression tests pass. External publisher authentication, full JSON Schema 2020-12 conformance, and consumer interoperability remain unimplemented. See [ROADMAP.md](ROADMAP.md).
 
 ## Contributing
 
