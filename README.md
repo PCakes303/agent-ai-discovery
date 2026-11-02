@@ -92,6 +92,6 @@ See [Entry-level build guide](docs/ENTRY-LEVEL-BUILD.md) for Starter → Develop
 
 ## License
 
-License selection for this repository remains pending review. No license is asserted; do not assume reuse or redistribution rights until an approved license is committed.
+This repository applies a scoped mixed-license policy: original source code and machine-readable contracts are licensed under Apache-2.0; original human-readable documentation is licensed under CC BY 4.0. Third-party material retains upstream terms. Datasets, evidence, fixtures, sample payloads, media, and material with uncertain provenance are not blanket-licensed and require separate review. See [LICENSE.md](LICENSE.md).
 
 The discovery-index parser rejects malformed URI authorities, URL credentials, fragments, whitespace and ports outside the valid range. Parsing failures are reported as validation errors; this remains metadata validation, not issuer authentication or trust verification.
