@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PCakes303/agent-ai-discovery/blob/main/schemas/discovery-document.schema.json",
+  "title": "MrCakes931 Discovery Document",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "discovery_version",
+    "publisher",
+    "generated_at",
+    "resources"
+  ],
+  "properties": {
+    "discovery_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "publisher": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "manifest_uri"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifest_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "manifest_uri",
+          "manifest_version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._:-]*$"
+          },
+          "kind": {
+            "enum": [
+              "agent",
+              "tool",
+              "service",
+              "repository",
+              "dataset",
+              "schema"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string"
+          },
+          "manifest_uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "manifest_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
