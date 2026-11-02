@@ -1,0 +1,30 @@
+{
+  "compatibility_version": "1.0.0",
+  "repository": "agent-ai-discovery",
+  "status": "not-yet-tested",
+  "policy": "Declared dependencies are contract relationships, not proof of runtime interoperability.",
+  "dependencies": [
+    {
+      "repository_id": "master",
+      "version_range": "*",
+      "status": "declared-not-tested"
+    },
+    {
+      "repository_id": "resource-manifest",
+      "version_range": "*",
+      "status": "declared-not-tested"
+    },
+    {
+      "repository_id": "schema-registry",
+      "version_range": "*",
+      "status": "declared-not-tested"
+    },
+    {
+      "repository_id": "identity-trust",
+      "version_range": "*",
+      "status": "declared-not-tested"
+    }
+  ],
+  "tested_combinations": [],
+  "breaking_change_policy": "Major contract version for removed/renamed required fields, semantic changes, or weakened security guarantees; minor for additive optional fields; patch for editorial corrections."
+}
