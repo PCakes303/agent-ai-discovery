@@ -6,7 +6,7 @@
   "name": "agent-ai-discovery",
   "visibility": "public",
   "maturity": "scaffolding",
-  "summary": "AI-native discovery metadata, machine-readable entrypoints, published capability indexes, and opt-in agent integration.",
+  "summary": "Experimental discovery document contract and bounded local index builder; no hosted endpoint or publisher authentication.",
   "license": {
     "expression": null,
     "status": "pending-review",
@@ -69,9 +69,14 @@
   ],
   "evidence": [
     {
-      "claim": "Initial repository documentation and metadata scaffold committed.",
-      "kind": "specification",
-      "location": "README.md and manifest.json"
+      "claim": "Strict bounded JSON parsing, schema-backed document validation and deterministic index generation are covered by regression tests.",
+      "kind": "test",
+      "location": "tests/test_discovery_index.py"
+    },
+    {
+      "claim": "CI validates discovery documents on Python 3.10, 3.11 and 3.12 using the normative Draft 2020-12 schema.",
+      "kind": "test",
+      "location": ".github/workflows/validate.yml"
     }
   ]
 }
