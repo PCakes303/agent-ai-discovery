@@ -29,7 +29,7 @@ Discovery is a metadata distribution layer—not an identity provider, policy en
 | `tools/discovery_index.py` | Standard-library validator and deterministic index builder |
 | `tests/test_discovery_index.py` | Positive and negative unit tests |
 | `manifest.json` | Ecosystem repository manifest |
-| `capabilities.json` | Planned capability declarations |
+| `capabilities.json` | Capability declarations and maturity status |
 | `compatibility.json` | Declared dependencies and test status |
 
 ## Quick start
