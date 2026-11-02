@@ -1,22 +1,15 @@
 # Security Policy
 
 ## Scope
-This is a public repository. Treat issues, pull requests, manifests, schemas, code, dependencies, generated artifacts, and external references as untrusted until validated.
+This public repository contains a discovery-document schema and local index-builder scaffold. Discovery metadata is untrusted input and never grants trust, authorization, or permission to execute a resource.
 
 ## Reporting
-Do not publish exploitable vulnerabilities, credentials, personal data, or sensitive operational details in public issues. Use GitHub's private vulnerability reporting for this repository if enabled. If unavailable, contact the repository owner through a verified private channel; do not include secrets in the report.
+
+Do not publish exploitable vulnerability details, credentials, personal data, or sensitive operational information in public issues. Use GitHub private vulnerability reporting or a private security advisory only if enabled for this repository. No dedicated private reporting address is published here; if GitHub private reporting is unavailable, the owner must configure an approved private reporting channel before production use.
 
 ## Baseline requirements
-- No secrets or credentials in source control, examples, logs, or test fixtures.
-- Validate and constrain untrusted input.
-- Apply least privilege and default-deny to protected actions.
-- Fail closed when required authentication, authorization, integrity, or revocation checks cannot complete.
-- Pin and review dependencies and CI actions; use short-lived credentials where supported.
-- Record security-relevant events while minimizing sensitive payloads.
-- Distinguish authentication from authorization and descriptive metadata from proof of trust.
-
-## Disclosure
-Please allow time for triage and remediation before public disclosure. Coordinate a disclosure timeline with the maintainer.
-
-## Current status
-This policy is an initial baseline, not a completed threat model or independent security audit.
+- Treat all publisher metadata, resource entries, URIs, and capability claims as untrusted.
+- Validate structure and freshness; authenticate publishers and authorize actions independently.
+- Do not infer identity or permission from HTTPS, repository membership, or discovery presence.
+- Bound document size, resource count, string lengths and parser depth in consumers before production use.
+- Do not execute resources merely because they appear in an index.
