@@ -3,12 +3,12 @@
 > AI-native discovery metadata, machine-readable entry points, published capability indexes, and opt-in agent integration.
 
 ## Start here
-- [README](${url}README.md)
-- [AI agent instructions](${url}AGENTS.md)
-- [Repository manifest](${url}manifest.json)
-- [Capabilities](${url}capabilities.json)
-- [Compatibility declarations](${url}compatibility.json)
-- [Security policy](${url}SECURITY.md)
+- [README](https://github.com/PCakes303/agent-ai-discovery/blob/main/README.md)
+- [AI agent instructions](https://github.com/PCakes303/agent-ai-discovery/blob/main/AGENTS.md)
+- [Repository manifest](https://github.com/PCakes303/agent-ai-discovery/blob/main/manifest.json)
+- [Capabilities](https://github.com/PCakes303/agent-ai-discovery/blob/main/capabilities.json)
+- [Compatibility declarations](https://github.com/PCakes303/agent-ai-discovery/blob/main/compatibility.json)
+- [Security policy](https://github.com/PCakes303/agent-ai-discovery/blob/main/SECURITY.md)
 
 ## Intended agent use
 Use this repository to understand discovery metadata contracts and planned discovery/index capabilities. Current capability declarations are marked planned; do not infer a live discovery endpoint or runtime service.
