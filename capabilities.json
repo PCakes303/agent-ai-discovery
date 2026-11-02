@@ -1,32 +1,57 @@
 {
-  "capabilities_version": "1.0.0",
+  "capabilities_version": "1.1.0",
   "repository": "agent-ai-discovery",
   "repository_id": "discovery",
-  "status": "planned",
+  "maturity": "scaffolding",
   "capabilities": [
     {
-      "id": "discovery.capability.1",
-      "name": "A versioned discovery document format",
-      "status": "planned",
-      "description": "A versioned discovery document format"
+      "id": "discovery.document-format",
+      "name": "Versioned discovery document format",
+      "status": "scaffolded",
+      "description": "JSON Schema and example define the discovery document contract.",
+      "evidence": [
+        "schemas/discovery-document.schema.json",
+        "examples/discovery.json"
+      ],
+      "limitations": [
+        "Scaffolding only; downstream production use is not certified."
+      ]
     },
     {
-      "id": "discovery.capability.2",
-      "name": "A generated index sourced from authoritative manifests",
-      "status": "planned",
-      "description": "A generated index sourced from authoritative manifests"
+      "id": "discovery.index-builder",
+      "name": "Deterministic index builder from discovery documents",
+      "status": "scaffolded",
+      "description": "Local validator and index builder support a deterministic generated index.",
+      "evidence": [
+        "tools/discovery_index.py",
+        "tests/test_discovery_index.py"
+      ],
+      "limitations": [
+        "Scaffolding only; downstream production use is not certified."
+      ]
     },
     {
-      "id": "discovery.capability.3",
-      "name": "Validation for stale, malformed, or duplicate entries",
-      "status": "planned",
-      "description": "Validation for stale, malformed, or duplicate entries"
+      "id": "discovery.input-validation",
+      "name": "Validation for malformed and duplicate entries",
+      "status": "scaffolded",
+      "description": "Unit tests cover validator behavior; full JSON Schema 2020-12 validation is not claimed.",
+      "evidence": [
+        "tools/discovery_index.py",
+        "tests/test_discovery_index.py"
+      ],
+      "limitations": [
+        "Scaffolding only; downstream production use is not certified."
+      ]
     },
     {
-      "id": "discovery.capability.4",
-      "name": "A documented opt-in discovery endpoint profile",
+      "id": "discovery.endpoint-profile",
+      "name": "Opt-in hosted discovery endpoint profile",
       "status": "planned",
-      "description": "A documented opt-in discovery endpoint profile"
+      "description": "Hosted publisher authentication and endpoint interoperability are future work.",
+      "evidence": [],
+      "limitations": [
+        "Not implemented; no interoperability or runtime claim."
+      ]
     }
   ],
   "explicit_non_capabilities": [
