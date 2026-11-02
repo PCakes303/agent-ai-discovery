@@ -79,3 +79,13 @@ The repository is still **scaffolding**. A first local validator and unit-test s
 ## Contributing
 
 Read [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md). Changes to the discovery contract require versioning, compatibility analysis, fixtures, and security review.
+
+## Entry-level build
+
+Start with the runnable starter build:
+
+    python tools/starter_build.py
+    python tools/discovery_index.py examples/discovery.json --output /tmp/discovery-index.json
+    python -m unittest discover -s tests -v
+
+See [Entry-level build guide](docs/ENTRY-LEVEL-BUILD.md) for Starter → Developer → Production progression.
