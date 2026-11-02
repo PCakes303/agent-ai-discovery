@@ -21,6 +21,17 @@ on:
       - '.github/workflows/**'
   pull_request:
     paths:
+      - 'README.md'
+      - 'AGENTS.md'
+      - 'CONTRIBUTING.md'
+      - 'SECURITY.md'
+      - 'manifest.json'
+      - 'capabilities.json'
+      - 'compatibility.json'
+      - 'llms.txt'
+      - 'CHANGELOG.md'
+      - 'ROADMAP.md'
+      - 'docs/**'
       - 'schemas/**'
       - 'examples/**'
       - 'tools/**'
