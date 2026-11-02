@@ -93,3 +93,5 @@ See [Entry-level build guide](docs/ENTRY-LEVEL-BUILD.md) for Starter → Develop
 ## License
 
 License selection for this repository remains pending review. No license is asserted; do not assume reuse or redistribution rights until an approved license is committed.
+
+The discovery-index parser rejects malformed URI authorities, URL credentials, fragments, whitespace and ports outside the valid range. Parsing failures are reported as validation errors; this remains metadata validation, not issuer authentication or trust verification.
