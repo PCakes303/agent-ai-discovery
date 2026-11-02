@@ -7,7 +7,7 @@
     {
       "id": "discovery.document-format",
       "name": "Versioned discovery document format",
-      "status": "scaffolded",
+      "status": "tested",
       "description": "JSON Schema and example define the discovery document contract.",
       "evidence": [
         "schemas/discovery-document.schema.json",
@@ -20,7 +20,7 @@
     {
       "id": "discovery.index-builder",
       "name": "Deterministic index builder from discovery documents",
-      "status": "scaffolded",
+      "status": "tested",
       "description": "Local validator and index builder support a deterministic generated index.",
       "evidence": [
         "tools/discovery_index.py",
@@ -33,14 +33,14 @@
     {
       "id": "discovery.input-validation",
       "name": "Validation for malformed and duplicate entries",
-      "status": "scaffolded",
-      "description": "Unit tests cover validator behavior; full JSON Schema 2020-12 validation is not claimed.",
+      "status": "tested",
+      "description": "Enforces strict bounded JSON parsing, duplicate-key and non-finite-number rejection, Draft 2020-12 schema constraints, HTTPS-only URIs, timezone-aware timestamps, resource count/field bounds and unique IDs.",
       "evidence": [
         "tools/discovery_index.py",
         "tests/test_discovery_index.py"
       ],
       "limitations": [
-        "Scaffolding only; downstream production use is not certified."
+        "Local validation/index construction only; no hosted endpoint, publisher authentication, authorization or runtime integration."
       ]
     },
     {
