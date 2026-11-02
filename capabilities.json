@@ -1,0 +1,38 @@
+{
+  "capabilities_version": "1.0.0",
+  "repository": "agent-ai-discovery",
+  "repository_id": "discovery",
+  "status": "planned",
+  "capabilities": [
+    {
+      "id": "discovery.capability.1",
+      "name": "A versioned discovery document format",
+      "status": "planned",
+      "description": "A versioned discovery document format"
+    },
+    {
+      "id": "discovery.capability.2",
+      "name": "A generated index sourced from authoritative manifests",
+      "status": "planned",
+      "description": "A generated index sourced from authoritative manifests"
+    },
+    {
+      "id": "discovery.capability.3",
+      "name": "Validation for stale, malformed, or duplicate entries",
+      "status": "planned",
+      "description": "Validation for stale, malformed, or duplicate entries"
+    },
+    {
+      "id": "discovery.capability.4",
+      "name": "A documented opt-in discovery endpoint profile",
+      "status": "planned",
+      "description": "A documented opt-in discovery endpoint profile"
+    }
+  ],
+  "explicit_non_capabilities": [
+    "Authentication or authorization decisions",
+    "Credential issuance or trust establishment",
+    "Runtime agent execution",
+    "Copying authoritative schemas or manifests into a competing registry"
+  ]
+}
