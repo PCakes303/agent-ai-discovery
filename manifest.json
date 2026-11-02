@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PCakes303/agent-ai-discovery/blob/main/manifest.json",
+  "manifest_version": "1.0.0",
+  "id": "discovery",
+  "name": "agent-ai-discovery",
+  "visibility": "public",
+  "maturity": "scaffolding",
+  "summary": "AI-native discovery metadata, machine-readable entrypoints, published capability indexes, and opt-in agent integration.",
+  "license": {
+    "expression": null,
+    "status": "pending-review",
+    "notes": "Mixed ecosystem licensing is approved; this repository's exact license is pending review. Do not assume or add a license until selected."
+  },
+  "interfaces": [
+    {
+      "name": "discovery-contract",
+      "version": "0.1.0",
+      "kind": "document",
+      "stability": "draft"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "master",
+      "constraint": "*",
+      "kind": "contract"
+    },
+    {
+      "id": "resource-manifest",
+      "constraint": "*",
+      "kind": "contract"
+    },
+    {
+      "id": "schema-registry",
+      "constraint": "*",
+      "kind": "contract"
+    },
+    {
+      "id": "identity-trust",
+      "constraint": "*",
+      "kind": "contract"
+    }
+  ],
+  "security": {
+    "threat_model": "See SECURITY.md. Public repository; treat all external inputs, contributors, manifests, events, and referenced artifacts as untrusted until independently validated.",
+    "secrets_in_repository": false,
+    "data_classification": "public",
+    "security_contact": null
+  },
+  "repository_url": "https://github.com/PCakes303/agent-ai-discovery",
+  "default_branch": "main",
+  "compatibility": [
+    {
+      "with": "resource-manifest",
+      "range": "*",
+      "tested": false
+    },
+    {
+      "with": "schema-registry",
+      "range": "*",
+      "tested": false
+    },
+    {
+      "with": "identity-trust",
+      "range": "*",
+      "tested": false
+    }
+  ],
+  "evidence": [
+    {
+      "claim": "Initial repository documentation and metadata scaffold committed.",
+      "kind": "specification",
+      "location": "README.md and manifest.json"
+    }
+  ]
+}
