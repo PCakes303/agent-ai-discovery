@@ -11,7 +11,7 @@
 - [Security policy](https://github.com/PCakes303/agent-ai-discovery/blob/main/SECURITY.md)
 
 ## Intended agent use
-Use this repository to understand discovery metadata contracts and planned discovery/index capabilities. Current capability declarations are marked planned; do not infer a live discovery endpoint or runtime service.
+Use this repository to understand discovery metadata contracts and planned discovery/index capabilities. The document format, local index builder and input-validation capabilities are scaffolded; the hosted endpoint profile remains planned. Do not infer a live discovery endpoint or runtime service.
 
 ## Dependencies and boundaries
 The manifest and compatibility metadata declare dependencies on the master registry, resource-manifest, schema-registry, and identity-trust repositories. These are declarations, not proof of tested interoperability.
