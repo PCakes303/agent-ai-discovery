@@ -34,7 +34,7 @@ Discovery is a metadata distribution layer—not an identity provider, policy en
 
 ## Quick start
 
-Requires Python 3.10 or later.
+Requires Python 3.10 or later. Install the pinned development validator dependency with `python -m pip install -r requirements-dev.txt`.
 
 ```bash
 python -m unittest discover -s tests -v
@@ -42,7 +42,7 @@ python tools/discovery_index.py examples/discovery.json
 python tools/discovery_index.py examples/discovery.json --output build/discovery-index.json
 ```
 
-The validator checks the subset required by the index builder. It is not a complete JSON Schema 2020-12 validator; use a standards-compliant validator for full schema conformance.
+The validator enforces the normative Draft 2020-12 schema, strict bounded JSON parsing, HTTPS-only URI rules, timezone-aware timestamps, duplicate/resource limits, and deterministic index constraints.
 
 ## Document contract
 
