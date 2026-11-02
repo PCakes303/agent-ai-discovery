@@ -1,59 +1,81 @@
 # Agent AI Discovery
 
-**Repository:** [PCakes303/agent-ai-discovery](https://github.com/PCakes303/agent-ai-discovery)  
 **Ecosystem:** [MrCakes931 Agent Intelligence Ecosystem](https://github.com/PCakes303/agent-intelligence-ecosystem)  
-**Repository ID:** `discovery` · **Maturity:** scaffolding · **Visibility:** public
+**Repository ID:** `discovery` · **Maturity:** scaffolding with experimental local validator · **Visibility:** public
 
-## Purpose
+## Mission
 
-Publish machine-readable ecosystem entrypoints and discovery metadata so people and agents can find repositories, resources, interfaces, and declared capabilities.
+Publish machine-readable discovery documents and deterministic indexes so humans and agents can locate ecosystem resources, understand their declared interfaces, and follow links to authoritative manifests.
 
-## Scope
+## Architecture and trust model
 
-- Discovery documents and metadata endpoints
-- Capability index publication and versioning
-- Opt-in discovery integration guidance
-- Links to authoritative resource manifests
+Discovery is a metadata distribution layer—not an identity provider, policy engine, registry of record, or runtime.
 
-## Explicit boundaries
+1. A publisher publishes a discovery document.
+2. A consumer validates its structure and freshness.
+3. The consumer resolves the resource's authoritative manifest.
+4. Publisher identity is authenticated using a separately configured trust mechanism when required.
+5. The consumer independently authorizes the requested operation.
 
-This repository does not own:
+**Discovery never grants trust or permission.** Resource metadata is untrusted input, even when retrieved over HTTPS.
 
-- Authentication or authorization decisions
-- Credential issuance or trust establishment
-- Runtime agent execution
-- Copying authoritative schemas or manifests into a competing registry
+## Repository contents
+
+| Path | Purpose |
+|---|---|
+| `schemas/discovery-document.schema.json` | Formal JSON Schema 2020-12 contract |
+| `examples/discovery.json` | Small valid discovery document |
+| `docs/DISCOVERY-CONTRACT.md` | Semantics, trust boundary, versioning, freshness, privacy |
+| `tools/discovery_index.py` | Standard-library validator and deterministic index builder |
+| `tests/test_discovery_index.py` | Positive and negative unit tests |
+| `manifest.json` | Ecosystem repository manifest |
+| `capabilities.json` | Planned capability declarations |
+| `compatibility.json` | Declared dependencies and test status |
+
+## Quick start
+
+Requires Python 3.10 or later.
+
+```bash
+python -m unittest discover -s tests -v
+python tools/discovery_index.py examples/discovery.json
+python tools/discovery_index.py examples/discovery.json --output build/discovery-index.json
+```
+
+The validator checks the subset required by the index builder. It is not a complete JSON Schema 2020-12 validator; use a standards-compliant validator for full schema conformance.
+
+## Document contract
+
+Every document declares:
+- contract version;
+- publisher identity and publisher-manifest reference;
+- generation timestamp;
+- resource entries with stable ID, kind, name, authoritative manifest URI, and manifest version;
+- optional capabilities, tags, summary, and update timestamp.
+
+See the [schema](schemas/discovery-document.schema.json) and [example](examples/discovery.json).
 
 ## Dependencies
 
-- `master`
-- `resource-manifest`
-- `schema-registry`
-- `identity-trust`
+- `master` — canonical ecosystem metadata
+- `resource-manifest` — authoritative resource descriptions
+- `schema-registry` — schema publication and compatibility conventions
+- `identity-trust` — publisher/workload identity profiles
 
-See the [canonical dependency graph](https://github.com/PCakes303/agent-intelligence-ecosystem/blob/main/registry/dependencies.json). Declared dependencies are contract relationships; they do not mean those components are already implemented or tested together.
+These are declared contract dependencies, not verified runtime integrations. See the [dependency graph](https://github.com/PCakes303/agent-intelligence-ecosystem/blob/main/registry/dependencies.json).
 
-## Initial deliverables
+## Security and privacy
 
-1. A versioned discovery document format
-2. A generated index sourced from authoritative manifests
-3. Validation for stale, malformed, or duplicate entries
-4. A documented opt-in discovery endpoint profile
+- Never publish credentials, private endpoints, internal hostnames, personal data, or restricted operational details.
+- Validate all discovery input and apply local freshness policies.
+- Do not use discovery presence, HTTPS, manifest claims, or repository membership as authorization.
+- Do not execute resources merely because they appear in an index.
+- Follow [SECURITY.md](SECURITY.md).
 
-## First implementation milestone
+## Maturity and roadmap
 
-Define a discovery document schema that references resource-manifest and schema-registry versions; add valid/invalid fixtures and a deterministic index generator.
-
-## Security and trust
-
-Discovery results are untrusted hints. Consumers MUST resolve authoritative manifests, authenticate publishers where required, and independently authorize operations.
-
-Read [SECURITY.md](SECURITY.md) before contributing. Never commit secrets. Validate untrusted data and fail closed for security-sensitive decisions.
-
-## Status
-
-This repository currently contains its initial documentation and metadata scaffold. Domain implementation, interoperability, and conformance are **not yet verified**. The master registry is authoritative for ecosystem-wide status.
+The repository is still **scaffolding**. A first local validator and unit-test suite have been added, but CI, external publisher authentication, schema conformance testing, and consumer interoperability are not yet verified. See [ROADMAP.md](ROADMAP.md).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md). Changes should include tests or validation evidence appropriate to the affected contract.
+Read [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md). Changes to the discovery contract require versioning, compatibility analysis, fixtures, and security review.
