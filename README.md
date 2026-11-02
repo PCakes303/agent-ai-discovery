@@ -89,3 +89,7 @@ Start with the runnable starter build:
     python -m unittest discover -s tests -v
 
 See [Entry-level build guide](docs/ENTRY-LEVEL-BUILD.md) for Starter → Developer → Production progression.
+
+## License
+
+License selection for this repository remains pending review. No license is asserted; do not assume reuse or redistribution rights until an approved license is committed.
