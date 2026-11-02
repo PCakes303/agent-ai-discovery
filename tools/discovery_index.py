@@ -150,7 +150,7 @@ def main():
         output = json.dumps(
             {"index_version": "1.0.0", "resource_count": len(rows), "resources": rows},
             indent=2, sort_keys=True,
-        ) + "\\n"
+        ) + "\n"
         if args.output:
             args.output.write_text(output, encoding="utf-8")
         else:
